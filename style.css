@@ -1,0 +1,108 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.loader {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	text-align: center;
+	margin: 0 auto;
+	left: 0; right: 0;
+	background-color: black;
+	background: radial-gradient(ellipse at center, rgba(74,74,74,1) 0%, rgba(0,0,0,1) 100%);
+}
+	.bar {
+		width: 400px;
+		height: 200px;
+		margin: 0 auto;
+		position: absolute;
+		box-shadow: inset 0 0 15px #000;
+		left: 0; right: 0;
+		bottom: 35%;
+		border-radius: 10px;
+		padding: 20px;
+	}
+		.top,
+		.bottom {
+			width: 100%;
+			height: 50%;
+		}
+
+		.collum:before {
+			content: '';
+			display: block;
+			height: 100%;
+			width: 300%;
+			position: absolute;
+			animation: rainbow 5s linear infinite;
+			background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+		}
+
+		.collum {
+			width: 11%;
+			height: 5%;
+			display: inline-block;
+			float: left;
+			overflow: hidden;
+			background-color: transparent; 
+			box-sizing: border-box;
+			position: relative;
+			z-index: 2;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+			margin: 0px 3px; 
+			animation: border 1s linear infinite;
+		}
+			.top .collum {
+				transform: rotateY(180deg);
+			}
+
+			.top {
+				transform: rotate(180deg);
+			}
+
+			.collum:nth-child(2) {
+				animation-delay: 80ms;
+			}
+			.collum:nth-child(3) {
+				animation-delay: 160ms;
+			}
+			.collum:nth-child(4) {
+				animation-delay: 240ms;
+			}
+			.collum:nth-child(5) {
+				animation-delay: 320ms;
+			}
+			.collum:nth-child(6) {
+				animation-delay: 400ms;
+			}
+			.collum:nth-child(7) {
+				animation-delay: 480ms;
+			}
+
+
+@keyframes rainbow {
+	0% {
+		left: 0%;
+	}
+	50% {
+		left: -200%;
+	}
+	100% {
+		left: 0%;
+	}
+}
+
+@keyframes border {
+	0% {
+		height: 5%;
+	}
+	50% {
+		height: 90%;
+	}
+	100% {
+		height: 5%;
+	}
+}
